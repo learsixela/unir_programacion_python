@@ -1,3 +1,4 @@
+import math
 
 # Implementa una función llamada ingresar_calificaciones() que permita
 # al usuario introducir el nombre de una materia y su calificación correspondiente.
@@ -23,6 +24,11 @@ def ingresar_calificaciones():
             try:
                 # Solicitar la calificación (validando que sea un número entre 0 y 10)
                 calificacion = float(input(f"Ingrese la calificación de {materia}: "))
+                # control de valores como nan, , inf y -inf, evitando que se contamine promedio, extremos y estado
+                if not math.isfinite(calificacion):
+                    print("La calificación debe ser un número finito.")
+                    continue
+                
                 if calificacion < 0 or calificacion > 10:
                     print("La calificación debe estar entre 0 y 10.")
                     continue
