@@ -57,6 +57,16 @@ def determinar_estado(calificaciones, umbral=5.0):
             reprobadas.append(i)
     return aprobadas, reprobadas
 
+# Implementa una función encontrar_extremos(calificaciones) 
+# que identifique el índice de la calificación más alta 
+# y el índice de la más baja en la lista de calificaciones.
+def encontrar_extremos(calificaciones):
+    if not calificaciones:
+        return None, None
+    alta_indice = calificaciones.index(max(calificaciones))
+    baja_indice = calificaciones.index(min(calificaciones))
+    return alta_indice, baja_indice
+
 
 # llamado a la función ingresar_calificaciones()
 nombres, calificaciones = ingresar_calificaciones()
@@ -69,3 +79,7 @@ print(f"El promedio de las calificaciones es: {promedio}")
 aprobadas, reprobadas = determinar_estado(calificaciones , 5.0)
 print(f"Índices de materias aprobadas: {aprobadas}")
 print(f"Índices de materias reprobadas: {reprobadas}")
+# llamado a la función encontrar_extremos()
+alta_indice, baja_indice = encontrar_extremos(calificaciones)
+print(f"Índice de la calificación más alta: {alta_indice}")
+print(f"Índice de la calificación más baja: {baja_indice}")
