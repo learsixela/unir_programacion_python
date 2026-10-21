@@ -39,8 +39,16 @@ def ingresar_calificaciones():
     # Retornar ambas listas cuando el usuario decida terminar        
     return nombres, calificaciones
 
+# Crea una función que reciba una lista de calificaciones y devuelva el promedio de todas ellas.
+def calcular_promedio(calificaciones):
+    if not calificaciones:
+        return 0
+    return sum(calificaciones) / len(calificaciones)
 
 # llamado a la función ingresar_calificaciones()
 nombres, calificaciones = ingresar_calificaciones()
 print(nombres)
 print(calificaciones)
+# llamado a la función calcular_promedio()
+promedio = calcular_promedio(calificaciones)
+print(f"El promedio de las calificaciones es: {promedio}")
