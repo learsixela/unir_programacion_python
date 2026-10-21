@@ -72,6 +72,7 @@ def encontrar_extremos(calificaciones):
 def resumen_final(nombres, calificaciones, promedio, aprobadas, reprobadas, alta_indice, baja_indice):
     if not calificaciones:
         print("No se ingresaron materias.")
+        print("\nGracias por usar la calculadora. ¡Hasta luego!")
         return
 
     print("\n--- RESUMEN FINAL ---")
