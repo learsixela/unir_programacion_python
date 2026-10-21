@@ -45,6 +45,19 @@ def calcular_promedio(calificaciones):
         return 0
     return sum(calificaciones) / len(calificaciones)
 
+# Crea una función que reciba una lista de calificaciones y un umbral (por defecto 5.0), 
+# y devuelva dos listas: una  con los índices de las materias aprobadas y otra con los índices de las reprobadas.
+def determinar_estado(calificaciones, umbral=5.0):
+    aprobadas = []
+    reprobadas = []
+    for i, calificacion in enumerate(calificaciones):
+        if calificacion >= umbral:
+            aprobadas.append(i)
+        else:
+            reprobadas.append(i)
+    return aprobadas, reprobadas
+
+
 # llamado a la función ingresar_calificaciones()
 nombres, calificaciones = ingresar_calificaciones()
 print(nombres)
@@ -52,3 +65,7 @@ print(calificaciones)
 # llamado a la función calcular_promedio()
 promedio = calcular_promedio(calificaciones)
 print(f"El promedio de las calificaciones es: {promedio}")
+# llamado a la función determinar_estado()
+aprobadas, reprobadas = determinar_estado(calificaciones , 5.0)
+print(f"Índices de materias aprobadas: {aprobadas}")
+print(f"Índices de materias reprobadas: {reprobadas}")
